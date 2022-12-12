@@ -15,4 +15,5 @@ db.connect((err) => {
     console.log("Data base was connencted succefully!");
 })
 
+app.use("/", require("./routes/pages"));
 app.listen(PORT);
