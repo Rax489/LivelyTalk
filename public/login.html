@@ -23,13 +23,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="./home.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/register">Register</a>
+                        <a class="nav-link active" aria-current="page" href="./register.html">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/login">Login</a>
+                        <a class="nav-link active" aria-current="page" href="#">Login</a>
                     </li>
                 </ul>
             </div>
@@ -49,16 +49,14 @@
                         <label for="password" class="form-label">Password</label>
                         <input type="password" class="form-control" id="password" name="password">
                     </div>
+                    <div class = "alert alert-danger" role = "alert" id = "error" style="display: none;"></div>
+                    <div class = "alert alert-success" role = "alert" id = "success" style="display: none;"></div>
                     <button type="submit" class="btn btn-primary">Login</button>
                 </form>
             </div>
         </div>
     </div>
-    <script>
-        if (message) {
-            document.querySelector(".container").innerHTML += `<h4 class="alert alert-danger mt-4">${message}</h4>`
-        }
-    </script>
+    <script src = "./js/login.js"> </script>
 </body>
 
 </html>

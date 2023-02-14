@@ -1,27 +1,21 @@
-const mysql = require("mysql");
+const db = require("../routes/db-config");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const { promisify } = require("util");
 
-const db = mysql.createConnection({
-    host: process.env.HOST,
-    user: process.env.DATABASE_USER,
-    password: process.env.PASSWORD,
-    database: process.env.DATABASE
-});
 exports.login = async (req, res) => {
     try {
         const { email, password } = req.body;
         if (!email || !password) {
             return res.status(400).sendFile(__dirname + "/login.html", {
-                message: "Please Provide an email and password"
+                message: "Please Provide an email and password!"
             })
         }
         db.query('SELECT * FROM users WHERE email = ?', [email], async (err, results) => {
             console.log(results);
             if (!results || !await bcrypt.compare(password, results[0].password)) {
                 res.status(401).sendFile(__dirname + '/login.html', {
-                    message: 'Email or Password is incorrect'
+                    message: 'Email or Password is incorrect!'
                 })
             } else {
                 const id = results[0].id;

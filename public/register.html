@@ -23,13 +23,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="./home.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/register">Register</a>
+                        <a class="nav-link active" aria-current="page" href="#">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/login">Login</a>
+                        <a class="nav-link active" aria-current="page" href="./login.html">Login</a>
                     </li>
                 </ul>
             </div>
@@ -41,29 +41,22 @@
                 <form action="/auth/register" method="POST">
                     <h4>Register</h4>
                     <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name" name="name">
-                    </div>
-                    <div class="mb-3">
                         <label for="email" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email">
+                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" autocomplete="off" required>
                         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password" name="password">
+                        <input type="password" class="form-control" id="password" name="password" autocomplete="off" required>
                     </div>
-                    <div class="mb-3">
-                        <label for="passwordConfirm" class="form-label">Confirm Password</label>
-                        <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm">
-                    </div>
+                        <div class = "alert alert-danger" role = "alert" id = "error" style="display: none;"></div>
+                        <div class = "alert alert-success" role = "alert" id = "success" style="display: none;"></div>
                     <button type="submit" class="btn btn-primary">Register User</button>
                 </form>
             </div>
         </div>
     </div>
-    <script>
-    </script>
+    <script src = "./js/register.js"> </script>
 </body>
 
 </html>
